@@ -11,7 +11,7 @@
         <div class="card-body">
             <div class="form-group">
                 <labe>Todo</label>
-                <input type="text" class="form-control" id="taskName" placeholder="Enter task name" required>
+                <input type="text" class="form-control" id="taskName" placeholder="Enter task name">
             </div>
             <button class="btn btn-primary" id="taskAdd">Add</button>     
         </div>
@@ -40,19 +40,12 @@
                     <tbody>
                         @foreach ($tasks as $task)
                             <tr>
-                                <!-- Task Name -->
-                                <td class="table-text">
-                                    <div>{{ $task->name }}</div>
+                                <td>
+                                    {{ $task->name }}
                                 </td>
 
                                 <td>
-                                    <!-- TODO: Delete Button -->
-                                    <form action="/task/{{ $task->id }}" method="POST">
-                                    {{ csrf_field() }}
-                                    {{ method_field('DELETE') }}
-
-                                    <button>Delete Task</button>
-                                    </form>
+                                    <button  target="{{$task->id}}"  class='delete btn btn-xm btn-danger' > Delete </button>
                                 </td>
                             </tr>
                         @endforeach
@@ -72,11 +65,39 @@
                 type: 'post',
                 data: {"name":$('#taskName').val()},
                 success: function(res){
-                      console.log(res);
-                    
+                      $('#taskName').val("");
+                      var row = $("<tr>");
+                      var deleteButton = $("<button>").html("Delete")
+                      deleteButton.attr("class","delete btn btn-xm btn-danger");
+                      deleteButton.attr("target",res.data.id);
+                      row.append($("<td>").html(res.data.name));
+                      row.append($("<td>").append(deleteButton));
+                      $("tbody").append(row)
                 }
                 });
          
+        });
+
+        $(document).on('click','.delete',function(){
+            let id = $(this).attr('target');
+            let conf = confirm("Are you sure you want to delete this todo?");
+            if(conf){
+                $.ajax({
+                    url:'http://127.0.0.1:8000/api/tasks/'+id,
+                    type: 'POST',
+                    data:{
+                            '_token' : '{{csrf_token()}}',
+                            '_method':'DELETE'
+                        },
+                    success: function(res){
+                        if(res){
+                           console.log("deleted successfully") 
+                        }      
+                     }
+                     
+                });
+                $(this).parent().parent().remove();
+            }
         });
    
 
