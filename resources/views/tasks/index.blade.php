@@ -62,9 +62,12 @@
            $(document).on('click','#taskAdd',function(){
             $.ajax({
                 url:'http://127.0.0.1:8000/api/tasks',
-                type: 'post',
-                data: {"name":$('#taskName').val()},
+                type: 'POST',
+                data:{
+                        'name':$('#taskName').val()
+                    },
                 success: function(res){
+                    if(res){
                       $('#taskName').val("");
                       var row = $("<tr>");
                       var deleteButton = $("<button>").html("Delete")
@@ -73,6 +76,7 @@
                       row.append($("<td>").html(res.data.name));
                       row.append($("<td>").append(deleteButton));
                       $("tbody").append(row)
+                    }
                 }
                 });
          
@@ -94,7 +98,6 @@
                            console.log("deleted successfully") 
                         }      
                      }
-                     
                 });
                 $(this).parent().parent().remove();
             }
