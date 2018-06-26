@@ -11,7 +11,7 @@ class Task extends Eloquent
      *
      * @var array
      */
-    protected $fillable = ['name'];
+    protected $fillable = ['name','user_id'];
     
     /**
      * Get the user that owns the task.
