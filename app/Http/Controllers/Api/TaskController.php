@@ -16,7 +16,9 @@ class TaskController extends Controller
     }
 
     public function store(Request $request){
-        $task = Task::create($request->all());
+        $task = Task::create([
+            'name' => $request->name,
+        ]);
         
        return new TaskResource($task); 
     }
@@ -24,6 +26,8 @@ class TaskController extends Controller
     public function destroy(Request $request,$id){
         Task::find($id)->delete();
 
-        return "Done"; 
+        return  response()->json([
+            'msg' => 'deleted successfully',
+        ]);
     }
 }

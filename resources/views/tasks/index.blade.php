@@ -28,7 +28,7 @@
         </div>
 
         <div class="card-body">
-                <table class="table table-striped task-table">
+                <table class="table table-striped ">
 
                     <!-- Table Body -->
                     <tbody>
