@@ -5,7 +5,7 @@ The application is separated into backend API generate JSON response and fronten
 #########################
 step 1: git clone https://github.com/WessamSaeid/To-Do-list-.git
 
-step 2: run command 'mongod --port 27018'
+step 2: run command 'mongod'
 
 step 3: cd Backend
 step 4: run command 'composer install'
