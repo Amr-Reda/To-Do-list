@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NgForm, NgModel } from '@angular/forms';
+import { NgForm } from '@angular/forms';
 
 import { ApiService } from './api.service';
 
