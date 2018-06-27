@@ -30,12 +30,6 @@
         <div class="card-body">
                 <table class="table table-striped task-table">
 
-                    <!-- Table Headings -->
-                    <thead>
-                        <th>To Do List</th>
-                        <th>&nbsp;</th>
-                    </thead>
-
                     <!-- Table Body -->
                     <tbody>
                         @foreach ($tasks as $task)
