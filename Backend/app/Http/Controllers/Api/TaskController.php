@@ -10,7 +10,7 @@ use App\Task;
 class TaskController extends Controller
 {
     /**
-     * Get all of the tasks.
+     * Get all the tasks.
      * 
      * @return json
      */
