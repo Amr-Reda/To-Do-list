@@ -12,11 +12,7 @@
       <form name="createForm" #createForm="ngForm" (ngSubmit)="create(createForm)" novalidate>
 
         <div class="form-group">
-          <label> Name </label>
-          <input type="text" name="name" [(ngModel)]="name"  class="form-control"required/>
-          <span style="color:red" *ngIf="createForm.submitted && !name ">
-            This Field is Required
-          </span>
+          <input type="text" name="name" [(ngModel)]="name"  class="form-control" required/>
         </div>
       
         <button class="btn btn-primary"> Add </button>

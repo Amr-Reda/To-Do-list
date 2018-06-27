@@ -50,7 +50,9 @@ export class AppComponent {
      
       this.api.postReq('tasks', this.dataForm).subscribe(
         res => {
-           this.getTasks();
+          this.name="";
+          this.getTasks();
+           
         },
         err => {
         }
