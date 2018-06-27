@@ -49,7 +49,7 @@ class TaskApiTest extends TestCase
     public function testDestroyTask()
     {
         //the id must be exist in the database
-        $response = $this->json('Delete', '/api/tasks/5b34016cf88cef11af7d3b96');
+        $response = $this->json('Delete', '/api/tasks/5b340396f88cef1f7b7dc632');
 
         $response
             ->assertStatus(200)
