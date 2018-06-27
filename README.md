@@ -6,7 +6,7 @@ The application is separated into backend API generate JSON response and fronten
 step 1: git clone https://github.com/WessamSaeid/To-Do-list-.git
 
 {if you do not have mongodb server:
-run command 'sudo apt-get mongodb'
+run command 'sudo apt-get install mongodb'
             'sudo apt-get install php-mongodb'}
 
 step 2: run command 'mongod'
