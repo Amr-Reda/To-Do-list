@@ -3,7 +3,7 @@ The application is separated into backend API generate JSON response and fronten
 
 #How_to_run
 #########################
-step 1: git clone git@github.com:WessamSaeid/To-Do-list-.git
+step 1: git clone https://github.com/WessamSaeid/To-Do-list-.git
 
 step 2: run command 'mongod --port 27018'
 
