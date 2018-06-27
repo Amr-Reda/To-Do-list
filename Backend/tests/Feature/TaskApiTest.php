@@ -9,7 +9,8 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 class TaskApiTest extends TestCase
 {
     /**
-     *
+     * test the api that get all tasks 
+     * 
      * @return void
      */
     public function testGetAllTasks()
@@ -24,6 +25,7 @@ class TaskApiTest extends TestCase
     }
 
     /**
+     * test the api that create new task
      *
      * @return void
      */
@@ -40,7 +42,8 @@ class TaskApiTest extends TestCase
     }
 
     /**
-     *
+     * test the api that delete specific task
+     * 
      * @return void
      */
     public function testDestroyTask()
@@ -52,7 +55,6 @@ class TaskApiTest extends TestCase
             ->assertStatus(200)
             ->assertExactJson([
                 'msg' => 'deleted successfully',
-            ]);
-            
+            ]);    
     }
 }
