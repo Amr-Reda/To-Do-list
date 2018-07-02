@@ -21,4 +21,12 @@ step 8: npm install
 step 9: run command  'ng update' 
 step 10: run command 'ng serve'
 
-step 11: go to 'http://localhost:4200'
+step 11:  open your browser on http://localhost:4200/
+
+###########################
+if you want to run with docker:
+
+step 1 : run command sudo docker-compose build
+step 2 : run command sudo docker-compose up 
+step 3:  open your browser on http://localhost:4200/
+
